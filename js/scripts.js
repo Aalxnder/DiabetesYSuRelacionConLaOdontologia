@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Obtener el archivo desde el html
             const fileName = button.getAttribute('data-file');
-            const filePath = `Archivos/U1/${fileName}`;
+            const filePath = `../Archivos/U1/${fileName}`;
 
             // Crea un enlace temporal para iniciar la descarga
             const link = document.createElement('a');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', event => {
             event.preventDefault();
             const fileName = button.getAttribute('data-file');
-            const filePath = `Archivos/U1/${fileName}`;
+            const filePath = `../Archivos/U1/${fileName}`;
 
             // Abre el archivo en una nueva pestaña
             window.open(filePath, '_blank');
