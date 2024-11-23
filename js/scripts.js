@@ -1,20 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona todos los botones de descarga
     const downloadButtons = document.querySelectorAll('.download-btn');
 
-    // Añade un evento click a cada botón
+    // Funcionalidad para descargar
     downloadButtons.forEach(button => {
         button.addEventListener('click', event => {
-            event.preventDefault(); // Evita que se recargue la página
+            event.preventDefault();
 
-            // Obtén el archivo desde el atributo data-file
+            // Obtener el archivo desde el html
             const fileName = button.getAttribute('data-file');
-            const filePath = `Archivos/U1/${fileName}`; // Ruta relativa al archivo
+            const filePath = `../Archivos/U1/${fileName}`;
 
             // Crea un enlace temporal para iniciar la descarga
             const link = document.createElement('a');
             link.href = filePath;
-            link.download = fileName; // Sugerencia de nombre para la descarga
+            link.download = fileName;
             document.body.appendChild(link); // Añade el enlace al DOM
             link.click(); // Simula el clic
             document.body.removeChild(link); // Elimina el enlace
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', event => {
             event.preventDefault();
             const fileName = button.getAttribute('data-file');
-            const filePath = `Archivos/U1/${fileName}`;
+            const filePath = `../Archivos/U1/${fileName}`;
 
             // Abre el archivo en una nueva pestaña
             window.open(filePath, '_blank');
